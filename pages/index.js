@@ -15,11 +15,13 @@ function Home({posts}) {
         <h1>My Blog</h1>
         <ul>
           {posts.map(post=>(
-          <Link href="/posts/[id]" as={`/posts/${post.id}`}  key={post.id} >
+            <div className={styles.list} key={post.id}>
+          <Link href="/posts/[id]" as={`/posts/${post.id}`}   >
           <a>
-            <li className={styles.list}>{post.title}</li>
+            <li>{post.title}</li>
           </a>
           </Link>
+          </div>
           ))}
         </ul>
       </main>
